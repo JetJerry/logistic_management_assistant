@@ -6,7 +6,7 @@ on:
       environment:
         description: 'Target Environment'
         required: true
-        default: 'FDE-YT-Cold'
+        default: 'Logistics Management Agent'
 
 jobs:
   deploy:
@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ubuntu/cold-chain-logistics-FDE-Project
+            cd /home/ubuntu/logisyic-management-agent
             git pull origin main
             source venv/bin/activate
             sudo systemctl restart streamlit
